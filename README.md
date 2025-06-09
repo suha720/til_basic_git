@@ -127,3 +127,38 @@ git log --pretty=oneline
 git show 커밋아이디
 ```
 
+### 8. commit 내용 수정하기
+- 바로 전 commit 내용 수정하기
+```bash
+git commit --amend
+```
+
+### 9. `깃허브의 온라인 주소 연결`하기(로컬 : main = 리모트 : origin)
+- 등록하기 
+```bash
+git remote add 별명 주소
+git remote add origin https://github.com/suha720/til_basic_git.git
+```
+- 목록보기
+```bash
+git remote -v
+```
+- 삭제하기
+```bash
+git remote remove 별명
+```
+
+### 10. 깃허브로 push 하기
+```bash
+git push -u 별명 로컬브랜치
+git push -u origin main
+
+git push // 위의 명령과 같음, -u 가 별명, 로컬브랜치를 생략하게 만듦
+```
+
+### 11. 최소 알아야 하는 git 명령
+```bash
+git add .
+git commit 
+git push
+```
