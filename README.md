@@ -73,3 +73,19 @@ git status
 ```bash
 git add README.md
 ```
+
+### 4. git 으로 모든 파일 추적하기
+```bash
+git add .
+```
+
+### 5. 작업히스토리 남기기
+- 간단하게 한줄로 메모 남기기
+```bash
+git commit -m "메세지"
+git commit -m "깃허브 사용법 정리중"
+```
+- 여러줄 작업내역 작성하기
+```bash 
+git commit
+```
