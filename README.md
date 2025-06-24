@@ -253,6 +253,12 @@ git switch 브랜치명 // 다른 브랜치로 이동
 git merge 대상브랜치명
 ```
 
+## `깃허브 브랜치 삭제`하기(상당히 조심하셔야 해요)
+```bash
+git push 리모트별칭 --delete 브랜치명
+git push origin --delete 브랜치명
+```
+
 # Git commit 관리하기
 
 ## 1. 바로 이전 커밋 수정하기
@@ -311,21 +317,54 @@ pick 8459f84 진행중
 ```
 
 - 실제 내용 수정 진행
+
 ```bash
 git commit --amend
 수정 및 저장
 ```
 
 - 마무리해서 메인으로 이동
+
 ```bash
 git rebase --continue
 ```
 
 ## 3. 깃허브에 commit 수정 내용 반영하기
+
 ### 3.1. 바로 커밋 수정 후 바로 push 하기
+
 ```bash
 // 강제로 push 하기 `--force`
 git push origin 브랜치명 --force
 ```
 
 ### 3.2. 이전 커밋 수정 후 push 하기
+
+## 4. Clone 하기
+
+### 4.1. https 로 클론하기
+
+```bash
+// 뒤에 `.` 폴더 생성없이 clone 생성
+git clone 주소 .
+```
+
+### 4.2. 깃허브 특정 브랜치 클론하기
+
+- 이미 특정 저장소를 클론을 한 상태에서 브랜치를 가져오고 싶다면
+
+```bash
+// 리모트별칭 = origin
+git fetch 리모트별칭 브랜치명
+git checkout 브랜치명
+
+
+git fetch origin 브랜치명
+git checkout 브랜치명
+
+```
+
+- Clone 과 함께 동시에 브랜치 지정하여 Clone 하기
+```bash
+git clon -b 브랜치명 --single-branch https주소 .
+```
